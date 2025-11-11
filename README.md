@@ -1,24 +1,24 @@
 🧠 Real-Time Glucose Level Estimation via Eye Feature Analysis and Temporal Deep Learning Models
 
-A novel AI-driven system designed to estimate blood glucose levels non-invasively and in real time using eye feature analysis through webcam-based image processing and temporal deep learning models (CNN-LSTM architecture).
+A novel AI-driven system designed to estimate blood glucose levels non-invasively and in real time using eye feature analysis through webcam-based image processing and temporal deep learning (CNN–LSTM) models.
 
-This project aims to offer a contactless, affordable, and accessible alternative to conventional glucose monitoring methods, leveraging advances in computer vision, signal processing, and deep learning.
+This project aims to deliver a contactless, affordable, and accessible alternative to traditional glucose monitoring, leveraging the latest in computer vision, signal processing, and deep learning.
 
 🚀 Features
 
-Real-time glucose level estimation from webcam video feed
+🎥 Real-time glucose estimation from webcam video feed
 
-Eye feature extraction (pupil, iris, sclera regions)
+👁️ Eye feature extraction (pupil, iris, sclera regions)
 
-Temporal feature modeling using LSTM and CNN-LSTM networks
+🧩 Temporal feature modeling using LSTM and CNN–LSTM networks
 
-Ensemble model combining Random Forest, Gradient Boosting, and Neural Networks
+⚙️ Ensemble model combining Random Forest, Gradient Boosting & Neural Networks
 
-Simulated RMSE range: 18–30 mg/dL, comparable to clinical-grade accuracy
+📉 Simulated RMSE range: 18–30 mg/dL — comparable to clinical-grade accuracy
 
-Interactive web interface (FastAPI + Bootstrap) for visualization of readings
+💻 Interactive web interface (FastAPI + Bootstrap) for visualization and logging
 
-Data logging and analysis for model improvement
+📊 Data logging & analysis for model retraining and performance tracking
 
 📘 Table of Contents
 
@@ -42,62 +42,62 @@ Contributors
 
 🧩 Abstract
 
-This study presents a real-time, non-invasive glucose estimation model that uses eye-tracking-based feature analysis and temporal deep learning. The proposed model processes live webcam footage to extract biometric and physiological markers (iris brightness, pupil dilation, scleral reflectivity) correlated with blood glucose levels.
+This study presents a real-time, non-invasive glucose estimation system that utilizes eye-tracking-based biomarker analysis and temporal deep learning.
+The model processes live webcam footage to extract biometric and physiological markers such as iris brightness, pupil dilation, and scleral reflectivity, which correlate with blood glucose levels.
 
-The system employs CNNs for spatial feature extraction and LSTM networks for temporal sequence learning, achieving a simulated RMSE of 18–30 mg/dL. This contactless approach holds potential for continuous glucose monitoring in telemedicine and personal healthcare applications.
+Using CNNs for spatial feature extraction and LSTMs for temporal sequence learning, the system achieves a simulated RMSE of 18–30 mg/dL.
+This approach demonstrates promise for continuous, contactless glucose monitoring in telemedicine and personal healthcare.
 
 ⚙️ System Architecture
 
-The overall system pipeline consists of:
+Pipeline Overview:
 
-Video Capture → Live webcam stream
+Video Capture → Face & Eye Detection → Eye Region Preprocessing
+→ CNN-based Feature Extraction → LSTM Temporal Modeling
+→ Glucose Prediction → Real-Time Visualization
 
-Face and Eye Detection → Haar cascade or Dlib landmark detection
-
-Eye Region Preprocessing → Grayscale conversion, cropping, and normalization
-
-Feature Extraction → CNN model for spatial biomarker extraction
-
-Temporal Modeling → LSTM/CNN-LSTM for sequence-based glucose estimation
-
-Prediction & Visualization → Real-time glucose display with dynamic charting
-
+Components
+Stage	Description
+Video Capture	Live webcam input via OpenCV
+Face & Eye Detection	Haar cascade or Dlib facial landmark detection
+Preprocessing	Grayscale conversion, cropping, normalization
+Feature Extraction	CNN extracts texture, brightness, and edge features
+Temporal Modeling	LSTM learns time-based variations (blink rate, dilation)
+Prediction	CNN–LSTM outputs glucose estimation
+Visualization	Real-time graph and readings via FastAPI frontend
 🧪 Methodology
 Component	Description
 Research Design	Quantitative, simulation-based approach
-Data Collection	Eye region frames extracted via webcam using OpenCV
-Features Extracted	Pupil size variation, sclera intensity, blink rate, eye aspect ratio
-Models Used	CNN, LSTM, CNN-LSTM, Random Forest, Gradient Boosting
-Tools	Python, TensorFlow/Keras, OpenCV, FastAPI, Bootstrap
-Evaluation Metrics	RMSE (18–30 mg/dL), correlation coefficient (r ≈ 0.82)
-Ethical Considerations	Simulation only, no real patient data used
+Data Collection	Eye region frames captured from webcam
+Features Extracted	Pupil size, sclera brightness, blink rate, eye aspect ratio
+Models Used	CNN, LSTM, CNN–LSTM, Random Forest, Gradient Boosting
+Tools & Libraries	Python, TensorFlow/Keras, OpenCV, FastAPI, Bootstrap
+Metrics	RMSE (18–30 mg/dL), Correlation Coefficient ≈ 0.82
+Ethical Considerations	Simulation only — no real patient data used
 🧬 Model Description
 Model	Description	Role
-CNN (Convolutional Neural Network)	Extracts spatial eye image features (texture, brightness, edges)	Feature extraction
-LSTM (Long Short-Term Memory)	Learns temporal variations across frames (eye movement, color change)	Temporal modeling
-CNN-LSTM Hybrid	Combines CNN + LSTM for robust glucose prediction	Main model
-Random Forest & Gradient Boosting	Ensemble ML models for feature fusion and regression	Auxiliary refinement
+CNN	Extracts spatial eye image features (texture, brightness, edges)	Spatial feature extraction
+LSTM	Learns temporal variations across frames (eye movements, dilation)	Temporal modeling
+CNN–LSTM Hybrid	Combines CNN + LSTM for robust spatiotemporal prediction	Main model
+Random Forest / Gradient Boosting	Ensemble ML models for refined regression	Auxiliary fusion
 📊 Results and Evaluation
 Metric	Value (Simulated)
 RMSE (mg/dL)	18 – 30
 Correlation (r)	0.82
-Response Latency	< 300 ms/frame
-Accuracy (±15 mg/dL range)	85%
+Response Latency	< 300 ms / frame
+Accuracy (±15 mg/dL range)	65%
+Visual Outputs
 
-Graphical Outputs:
+📈 Real-time glucose level plot
 
-Real-time glucose level plot
+🔁 Smoothed time-series glucose variation
 
-Smoothed time-series glucose variation
-
-CNN layer activation visualization
+🔍 CNN activation maps and feature heatmaps
 
 🌐 Deployment on Render
-1. 🧩 Create a GitHub Repository
+🧩 Step 1: Create GitHub Repository
 
-Push your project folder to GitHub (must include main.py, requirements.txt, and start.sh)
-
-The folder structure should look like this:
+Your project folder should include:
 
 ├── main.py
 ├── estimator.py
@@ -108,12 +108,11 @@ The folder structure should look like this:
 ├── static/
 │   └── .keep
 ├── requirements.txt
-├── start.sh
+└── start.sh
 
-2. ⚙️ Prepare Files for Deployment
+⚙️ Step 2: Prepare Files for Deployment
+
 requirements.txt
-
-Ensure these dependencies are listed:
 
 fastapi
 uvicorn
@@ -122,29 +121,28 @@ sqlalchemy
 opencv-python
 pillow
 
-start.sh
 
-Your Render start script should look like this:
+start.sh
 
 #!/bin/bash
 uvicorn main:app --host 0.0.0.0 --port 10000
 
 
-Make sure it’s executable:
+Make it executable:
 
 chmod +x start.sh
 
-3. ☁️ Deploy on Render
+☁️ Step 3: Deploy on Render
 
-Go to https://render.com
+Visit Render.com
 
-Click New + → Web Service
+Click New → Web Service
 
 Connect your GitHub repository
 
-Set the following:
+Configure:
 
-Build Command: (Render auto-installs requirements)
+Build Command:
 
 pip install -r requirements.txt
 
@@ -160,24 +158,24 @@ Port: 10000
 
 Click Deploy
 
-4. ✅ After Deployment
+✅ After Deployment
 
-Render builds and runs your app
+Render will automatically build and run your app.
 
-Visit the live URL (e.g. https://glutect.onrender.com)
+Visit your deployed link (e.g. https://glutect.onrender.com
+)
 
-Allow camera access to start real-time glucose monitoring
+Grant camera access for real-time monitoring.
 
-You can view logged glucose records at:
-
-https://glutect.onrender.com/records
+View stored glucose logs at:
+🔗 https://glutect.onrender.com/records
 
 🌱 Future Work
 
-Integration with wearable IoT sensors
+📡 Integration with wearable IoT sensors
 
-Mobile app for continuous monitoring
+📱 Mobile app for continuous monitoring
 
-Use of Vision Transformers for temporal modeling
+🧠 Use of Vision Transformers (ViT) for improved temporal modeling
 
-Clinical validation with real datasets
+🧬 Clinical validation using real-world datasets
